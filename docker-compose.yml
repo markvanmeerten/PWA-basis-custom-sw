@@ -12,7 +12,8 @@ services:
       - type: volume
         target: /var/www/vendor
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment: # Worden alleen lokaal gebruikt, Render overschrijft deze met eigen unieke waardes
       DB_CONNECTION: pgsql
       DB_HOST: db
@@ -32,6 +33,11 @@ services:
       POSTGRES_DB: laravel
       POSTGRES_USER: laravel
       POSTGRES_PASSWORD: secret
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U laravel"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     volumes:
       - pgdata:/var/lib/postgresql/data
 
