@@ -54,7 +54,7 @@ function App() {
           <h2>Test knoppen</h2>
 
           <hr />
-          {apiUrl}
+          
           <ul>
             <Counter apiUrl={apiUrl} id={id} />
             <InstallPrompt />
