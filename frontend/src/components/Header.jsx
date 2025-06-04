@@ -1,4 +1,4 @@
-import technovaLogo from "../assets/technova-logo-trans.png";
+import technovaLogo from "../assets/technova-logo-200x200.png";
 
 function Header() {
   return (

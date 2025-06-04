@@ -11,11 +11,20 @@ function Counter({ apiUrl, id }) {
       .then((data) => setCount(data.value))
       .catch((err) => console.error("Fout bij ophalen:", err))
       .finally(() => setLoading(false));
-  }, [id]);
+  }, [id, apiUrl]);
 
-  const handleClick = () => {
+  const handleIncrement = () => {
     setLoading(true);
     fetch(`${apiUrl}/increment/${id}`, { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => setCount(data.value))
+      .catch((err) => console.error("Fout bij posten:", err))
+      .finally(() => setLoading(false));
+  };
+
+  const handleRefresh = () => {
+    setLoading(true);
+    fetch(`${apiUrl}/increment/${id}`, { method: "GET" })
       .then((res) => res.json())
       .then((data) => setCount(data.value))
       .catch((err) => console.error("Fout bij posten:", err))
@@ -26,8 +35,12 @@ function Counter({ apiUrl, id }) {
     <li>
       Simpele counter om de backend & database verbinding te testen
       <br />
-      <button onClick={handleClick} disabled={loading}>
+      <button onClick={handleIncrement} disabled={loading}>
         {loading ? "⏳ Laden..." : `Count: ${count}`}
+      </button>
+
+      <button onClick={handleRefresh} disabled={loading} style={{ marginLeft: '10px' }}>
+        ↺
       </button>
     </li>
   );

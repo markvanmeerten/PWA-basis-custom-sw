@@ -7,9 +7,9 @@ export default defineConfig(({ mode }) => ({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+      strategies: "injectManifest",
       srcDir: "src",
       filename: "custom-sw.js",
-      strategies: "injectManifest",
       injectManifest: {
         swSrc: "src/custom-sw.js",
       },
@@ -20,9 +20,9 @@ export default defineConfig(({ mode }) => ({
         "apple-touch-icon.png",
       ],
       manifest: {
-        name: "My Counter",
-        short_name: "Counter",
-        description: "Increase by one..",
+        name: "Technova PWA-basis",
+        short_name: "PWA-basis",
+        description: "Gebruik dit tempalte als basis voor je PWA project",
         theme_color: "#ffffff",
         background_color: "#ffffff",
         display: "standalone",
@@ -30,33 +30,12 @@ export default defineConfig(({ mode }) => ({
         offline_enabled: true,
         icons: [
           {
-            src: "logo-512x512.png",
-            sizes: "512x512",
+            src: "technova-logo-200x200.png",
+            sizes: "200x200",
             type: "image/png",
           },
         ],
       },
     }),
   ],
-  server: {
-    proxy:
-      mode === "development"
-        ? {
-            "/api": {
-              target: "http://laravel-backend:8000",
-              changeOrigin: true,
-              secure: false,
-            },
-          }
-        : undefined,
-    host: true,
-    port: 5173,
-    strictPort: true,
-    hmr: {
-      clientPort: 5173,
-    },
-    watch: {
-      usePolling: true,
-    },
-  },
 }));
