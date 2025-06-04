@@ -1,0 +1,10 @@
+# Laravel
+/backend/vendor
+
+# Node
+/frontend/node_modules
+/frontend/dist
+
+# Env files
+/backend/.env
+/frontend/.env
