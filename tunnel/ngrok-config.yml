@@ -1,0 +1,12 @@
+version: 2
+authtoken: 7LCatzaLorEo3y6zPsrBw_5cmkDWbjQciVuHMJBLFk
+tunnels:
+  frontend-pwa:
+    addr: 4173
+    proto: http
+  frontend-dev:
+    addr: 5173
+    proto: http
+  backend:
+    addr: 8000
+    proto: http

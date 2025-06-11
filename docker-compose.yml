@@ -1,8 +1,8 @@
 services:
   backend:
+    container_name: laravel-backend
     build:
       context: ./backend
-    container_name: laravel-backend
     ports:
       - "8000:8000"
     volumes:
@@ -42,18 +42,18 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   frontend:
+    container_name: react-frontend
     build:
       context: ./frontend
     ports:
-     - "5173:5173"   # voor development mode
-     - "4173:4173"   # voor productie preview
+     - "5173:5173"   # voor prod mode
+     - "4173:4173"   # voor dev preview
     volumes:
       - type: bind
         source: ./frontend
         target: /app
       - type: volume
         target: /app/node_modules
-    container_name: react-frontend
 
 volumes:
   pgdata:

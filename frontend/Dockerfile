@@ -1,23 +1,15 @@
 FROM node:18
 
+# Maak een folder aan in de container
 WORKDIR /app
 
-# Install dependencies
+# Kopieer de package file naar de container
 COPY package.json package-lock.json ./
+# Installeer alle node_modules
 RUN npm install
 
-# Copy source code
+# Kopieer de rest van de applicatie code naar de container
 COPY . .
 
-# Install static server + concurrently
-RUN npm install -g serve concurrently
-
-# Expose Vite's dev port or the serve port
-EXPOSE 4173
-
-# Chokidar needs a shell type
-ENV SHELL=/bin/sh
-
-# Run build watcher AND static file server concurrently
-#CMD ["npx", "concurrently", "npm:build:watch", "npm:serve:dist"]
-CMD ["npm", "run", "pwa"]
+# Start dev server
+CMD ["npm", "run", "dev"]

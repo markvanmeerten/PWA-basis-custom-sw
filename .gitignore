@@ -8,3 +8,4 @@
 # Env files
 /backend/.env
 /frontend/.env
+/tunnel/.env
