@@ -12,12 +12,18 @@ export default defineConfig({
       filename: "custom-sw.js",
       injectManifest: {
         swSrc: "src/custom-sw.js",
+        globDirectory: "dist",
+        globPatterns: ["**/*.{js,css,html,png,svg,ico,webmanifest}"],
+        modifyURLPrefix: {
+          "assets/": "/assets/",
+        },
       },
       includeAssets: [
         "favicon.svg",
         "favicon.ico",
         "robots.txt",
         "apple-touch-icon.png",
+        "pwa-icon.png",
       ],
       manifest: {
         name: "Technova PWA-basis",
@@ -30,7 +36,7 @@ export default defineConfig({
         offline_enabled: true,
         icons: [
           {
-            src: "technova-logo-200x200.png",
+            src: "pwa-icon.png",
             sizes: "200x200",
             type: "image/png",
           },

@@ -13,7 +13,6 @@ self.addEventListener('message', (event) => {
 
 self.skipWaiting(); // ← direct actief maken
 clientsClaim(); // ← Neem alle tabs over
-// Nu is de SW actief en in controle, zelfs zonder reload
 
 console.log("Service Worker gestart");
 
