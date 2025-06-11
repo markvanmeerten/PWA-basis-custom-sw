@@ -9,7 +9,7 @@ const GoogleMap = ({ coordinates }) => {
     console.log(apiKey);
     
     setPosition({ lat: coordinates.latitude, lng: coordinates.longitude });
-  }, [coordinates])
+  }, [coordinates, apiKey])
   
   return (
     <>

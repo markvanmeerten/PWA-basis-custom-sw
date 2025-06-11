@@ -3,13 +3,30 @@ body {
 }
 
 * {
-  color: #002f94;
+  color: #0061AA;
+}
+
+button {
+  background-color: #27316F;
+  color: #ebf1fa;
+}
+
+button:hover {
+  border-color: #001D33;
+}
+
+a, a:visited, a:hover {
+  color: #702276;
 }
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+h1{
+  color: #702276;
 }
 
 .inline {
