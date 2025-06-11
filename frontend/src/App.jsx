@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Counter from "./components/Counter";
 import InstallPrompt from "./components/InstallPrompt";
 import Location from "./components/Location";
+import CameraCapture  from "./components/CameraCapture";
 
 import "./App.css";
 
@@ -24,7 +25,7 @@ function App() {
           <h2>Omschrijving</h2>
 
           <hr />
-
+          
           <p>
             Gebruik dit project als basis of als voorbeeld voor een Progressive
             Web App (PWA). Het is zo ingericht dat je zonder problemen kunt
@@ -60,13 +61,19 @@ function App() {
           
           <ul>
             <li>
-              <Counter apiUrl={apiUrl} id={id} />
-            </li>
-            <li>
               <InstallPrompt />
             </li>
+
+            <li>
+              <Counter apiUrl={apiUrl} id={id} />
+            </li>
+
             <li>
               <Location />
+            </li>
+
+            <li>
+              <CameraCapture />
             </li>
           </ul>
         </div>

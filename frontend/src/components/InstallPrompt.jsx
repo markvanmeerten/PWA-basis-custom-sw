@@ -30,7 +30,7 @@ function InstallPrompt() {
   return (
     <>
       <p>
-        Installeer de PWA via de adresbalk of door op onderstaande knop te drukken
+        Installeer hier de PWA
       </p>
       
       <button 

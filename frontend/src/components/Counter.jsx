@@ -33,7 +33,7 @@ function Counter({ apiUrl, id }) {
 
   return (
       <>
-        <p>Simpele counter om de backend & database verbinding te testen</p>
+        <p>Test hier de verbinding met de backend</p>
         
         <button onClick={handleIncrement} disabled={loading}>
           {loading ? "⏳ Laden..." : `Count: ${count}`}

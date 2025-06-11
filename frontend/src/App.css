@@ -29,6 +29,10 @@ h1{
   color: #702276;
 }
 
+h2 {
+  color: #27316F;
+}
+
 .inline {
   display: flex;
   gap: 2rem; /* optioneel, ruimte tussen de kaarten */
