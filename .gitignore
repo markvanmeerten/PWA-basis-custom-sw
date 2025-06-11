@@ -6,7 +6,7 @@
 /frontend/dist
 
 # Env files
-# /backend/.env
-# /frontend/.env
+/backend/.env
+/frontend/.env
 # Je moet .env-bestanden nooit committen omdat ze vaak gevoelige informatie (zoals API-sleutels of wachtwoorden) bevatten
 #  en daarom altijd in .gitignore horen te staan om te voorkomen dat gevoelige gegevens publiek beschikbaar zijn

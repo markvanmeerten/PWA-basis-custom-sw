@@ -1,8 +1,11 @@
+import { useEffect } from "react";
+
 import Header from "./components/Header";
 import Counter from "./components/Counter";
 import InstallPrompt from "./components/InstallPrompt";
+import Location from "./components/Location";
+
 import "./App.css";
-import { useEffect } from "react";
 
 function App() {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -56,8 +59,15 @@ function App() {
           <hr />
           
           <ul>
-            <Counter apiUrl={apiUrl} id={id} />
-            <InstallPrompt />
+            <li>
+              <Counter apiUrl={apiUrl} id={id} />
+            </li>
+            <li>
+              <InstallPrompt />
+            </li>
+            <li>
+              <Location />
+            </li>
           </ul>
         </div>
       </div>

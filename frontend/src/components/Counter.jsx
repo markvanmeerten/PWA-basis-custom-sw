@@ -32,17 +32,17 @@ function Counter({ apiUrl, id }) {
   };
 
   return (
-    <li>
-      Simpele counter om de backend & database verbinding te testen
-      <br />
-      <button onClick={handleIncrement} disabled={loading}>
-        {loading ? "⏳ Laden..." : `Count: ${count}`}
-      </button>
+      <>
+        <p>Simpele counter om de backend & database verbinding te testen</p>
+        
+        <button onClick={handleIncrement} disabled={loading}>
+          {loading ? "⏳ Laden..." : `Count: ${count}`}
+        </button>
 
-      <button onClick={handleRefresh} disabled={loading} style={{ marginLeft: '10px' }}>
-        ↺
-      </button>
-    </li>
+        <button onClick={handleRefresh} disabled={loading} style={{ marginLeft: '10px' }}>
+          ↺
+        </button>
+      </>
   );
 }
 

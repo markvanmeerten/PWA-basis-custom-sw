@@ -27,14 +27,19 @@ function InstallPrompt() {
     setShowInstallButton(false);
   };
 
-  if (!showInstallButton) return null;
-
   return (
-    <li>
-      Installeer de PWA via de adresbalk of door op onderstaande knop te drukken
-      <br />
-      <button onClick={handleInstallClick}>📲 Installeer deze app</button>
-    </li>
+    <>
+      <p>
+        Installeer de PWA via de adresbalk of door op onderstaande knop te drukken!
+      </p>
+      
+      <button 
+        onClick={handleInstallClick}
+        disabled={!showInstallButton}
+      >
+        📲 Installeer deze app
+      </button>
+    </>
   );
 }
 
